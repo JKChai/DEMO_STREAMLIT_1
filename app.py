@@ -70,7 +70,7 @@ def load_streamlit(obj):
             )
 
             st.write("You selected date from ", daterange[0].strftime("%Y-%m-%d"), " to ", daterange[1].strftime("%Y-%m-%d"))
-            obj["DateKey"] = pd.to_datetime(obj["DateKey"], format="%Y-%m-%d").dt.date
+            obj.loc[:,"DateKey"] = pd.to_datetime(obj["DateKey"], format="%Y-%m-%d").dt.date
             obj = obj.loc[(obj["DateKey"] >= daterange[0]) & (obj["DateKey"] <= daterange[1])]
 
     obj.reset_index(inplace=True)
