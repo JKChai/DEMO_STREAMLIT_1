@@ -14,7 +14,7 @@ def load_streamlit(obj):
 
     st.title("WORKFLOW PROTOTYPE")
 
-    col1, col2, col3 = st.columns([0.45,0.1,0.45])
+    col1, col2, col3 = st.columns([0.49,0.02,0.49])
 
     with col1:
         st.write("COUNT of ROWS")
