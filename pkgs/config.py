@@ -55,8 +55,11 @@ class SetupFactory:
                             f'SERVER={server};'\
                             f'DATABASE={database};'\
                             f'Trusted_Connection={trustedc};'
-
-        connection_object = pyodbc.connect(connection_string)
+    
+        try:
+            connection_object = pyodbc.connect(connection_string)
+        except pyodbc.Error as e:
+            connection_object = connection_string
 
         return sqlquery, connection_object
             
