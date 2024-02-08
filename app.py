@@ -8,7 +8,7 @@ from pkgs.config import SetupFactory
 @st.cache_data
 def get_data():
     rootpath = SetupFactory()
-    df = pd.read_csv(f"{rootpath}\\..\\ContosoRetailDW_FactSales.csv")
+    df = pd.read_csv(f"{rootpath}/../ContosoRetailDW_FactSales.csv")
     return df
 
 def load_streamlit(obj):
