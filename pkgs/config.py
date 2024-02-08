@@ -16,6 +16,7 @@ class SetupFactory:
             str: absolute path of directory 
         """
         fnamepath = os.path.abspath(__file__)
+        print(fnamepath)
         filepath  = os.path.dirname(fnamepath)
 
         return filepath
