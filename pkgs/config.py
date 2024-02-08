@@ -29,8 +29,18 @@ class SetupFactory:
             "config.toml"
             )
 
-        with open(fpath, mode="rb") as f:
-            config = tomli.load(f)
+        if os.path.isfile(fpath):
+            with open(fpath, mode="rb") as f:
+                config = tomli.load(f)
+        else:
+            config = {
+                "MSSQLSERVER":{
+                    "SERVER":"SERVER",
+                    "DATABASE":"DATABASE",
+                    "TRUSTEDC":"TRUSTEDC",
+                    "SQLQUERY":"SQLQUERY"
+                }
+            }
 
         return config
 
